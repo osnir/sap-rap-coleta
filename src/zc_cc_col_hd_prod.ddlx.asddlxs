@@ -1,0 +1,26 @@
+@Metadata.layer: #CORE
+@UI.headerInfo: { typeName: 'Produto', typeNamePlural: 'Produtos',
+                  title: { value: 'ProductCode' } }
+annotate entity ZC_CC_COL_HD_PROD
+    with 
+{
+  @UI.facet: [{ id: 'Prod', purpose: #STANDARD, type: #IDENTIFICATION_REFERENCE, label: 'Produto', position: 10 }]
+
+  @EndUserText.label: 'Tabela'
+  TableName;
+
+  @EndUserText.label: 'Período'
+  Period;
+
+  @EndUserText.label: 'Código do Produto'
+  @UI: { lineItem: [{ position: 10 }], identification: [{ position: 10 }] }
+  ProductCode;
+
+  @EndUserText.label: 'Criado por'
+  @UI: { lineItem: [{ position: 20 }] }
+  CreatedBy;
+
+  @EndUserText.label: 'Criado em'
+  @UI: { lineItem: [{ position: 30 }] }
+  CreatedAt;    
+}

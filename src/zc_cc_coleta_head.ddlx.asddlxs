@@ -1,0 +1,37 @@
+@Metadata.layer: #CORE
+@UI.headerInfo: { typeName: 'Coleta', typeNamePlural: 'Coletas',
+                  title: { value: 'TableName' }, description: { value: 'Period' } }
+annotate entity ZC_CC_COLETA_HEAD
+    with 
+{
+  @UI.facet: [
+    { id: 'General',  purpose: #STANDARD, type: #IDENTIFICATION_REFERENCE, label: 'Geral',    position: 10 },
+    { id: 'Products', purpose: #STANDARD, type: #LINEITEM_REFERENCE,       label: 'Produtos', position: 20,
+      targetElement: '_Products' } ]
+
+  @EndUserText.label: 'Tabela'
+  @UI: { lineItem: [{ position: 10 }], identification: [{ position: 10 }], selectionField: [{ position: 10 }] }
+  TableName;
+
+  @EndUserText.label: 'Período'
+  @UI: { lineItem: [{ position: 20 }], identification: [{ position: 20 }], selectionField: [{ position: 20 }] }
+  Period;
+
+  @EndUserText.label: 'Tipo de Disparo'
+  @UI: { lineItem: [{ position: 30 }], identification: [{ position: 30 }] }
+  TrigType;
+
+  @EndUserText.label: 'Status do Processamento'
+  @UI: { lineItem: [{ position: 40 }], identification: [{ position: 40 }] }
+  StatusProc;
+
+  @EndUserText.label: 'Criado por'
+  CreatedBy;
+  @EndUserText.label: 'Criado em'
+  CreatedAt;
+  @EndUserText.label: 'Modificado por'
+  LastChangedBy;
+  @EndUserText.label: 'Modificado em'
+  LastChangedAt;
+    
+}

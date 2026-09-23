@@ -1,0 +1,56 @@
+unmanaged implementation in class zbp_r_cc_coleta_head unique;
+strict ( 2 );
+
+define behavior for ZR_CC_COLETA_HEAD alias Head
+lock master
+authorization master ( instance )
+etag master LocalLastChangedAt
+{
+  create;
+  update;
+  delete;
+
+  field ( mandatory : create, readonly : update ) TableName, Period;
+  field ( readonly ) CreatedBy, CreatedAt, LastChangedBy, LastChangedAt, LocalLastChangedAt;
+
+  association _Products { create; }
+
+  mapping for zcc_coleta_head
+  {
+    TableName          = tablename;
+    Period             = period;
+    TrigType           = trig_type;
+    StatusProc         = status_proc;
+    CreatedBy          = created_by;
+    CreatedAt          = created_at;
+    LastChangedBy      = last_changed_by;
+    LastChangedAt      = last_changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+  }
+}
+
+define behavior for ZR_CC_COL_HD_PROD alias Product
+lock dependent by _Head
+authorization dependent by _Head
+etag master LocalLastChangedAt
+{
+  delete;
+
+  field ( readonly ) TableName, Period;
+  field ( mandatory : create, readonly : update ) ProductCode;
+  field ( readonly ) CreatedBy, CreatedAt, LastChangedBy, LastChangedAt, LocalLastChangedAt;
+
+  association _Head;
+
+  mapping for zcc_col_hd_prod
+  {
+    TableName          = tablename;
+    Period             = period;
+    ProductCode        = product_code;
+    CreatedBy          = created_by;
+    CreatedAt          = created_at;
+    LastChangedBy      = last_changed_by;
+    LastChangedAt      = last_changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+  }
+}

@@ -1,0 +1,6 @@
+CLASS zbp_r_cc_coleta_head DEFINITION PUBLIC ABSTRACT FINAL
+  FOR BEHAVIOR OF zr_cc_coleta_head.
+ENDCLASS.
+
+CLASS zbp_r_cc_coleta_head IMPLEMENTATION.
+ENDCLASS.

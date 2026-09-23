@@ -1,0 +1,18 @@
+projection;
+strict ( 2 );
+
+define behavior for ZC_CC_COLETA_HEAD alias Head
+{
+  use create;
+  use update;
+  use delete;
+
+  use association _Products { create; }
+}
+
+define behavior for ZC_CC_COL_HD_PROD alias Product
+{
+  use delete;
+
+  use association _Head;
+}

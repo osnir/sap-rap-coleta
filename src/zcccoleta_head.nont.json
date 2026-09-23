@@ -1,0 +1,11 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "SAP Object Node Type ZCCCOLETA_HEAD",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "name": "ZCCCOLETA_HEAD",
+  "sapObjectType": "ZCCCOLETA_HEAD",
+  "rootNode": true
+}

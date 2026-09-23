@@ -1,0 +1,5 @@
+@EndUserText.label: 'Coleta'
+define service ZUI_CC_COLETA {
+  expose ZC_CC_COLETA_HEAD as Head;
+  expose ZC_CC_COL_HD_PROD as Product;
+}
